@@ -60,5 +60,30 @@ namespace PlanetRush.Models
                 NeedsNuking = true;
             }
         }
+        private string GeneratePlanetCode(int galaxyCode)
+        {
+            string galaxyConversion;
+            string quadrant;
+            Random rnd = new Random();
+            int planetNumber;
+
+            if (galaxyCode == 1)
+            {
+                galaxyConversion = "M31";
+            }
+            else if (galaxyCode == 2)
+            {
+                galaxyConversion = "M33";
+            }
+            else
+            {
+                galaxyConversion = "MW";
+            }
+            char first = (char)rnd.Next('A', 'Z' + 1);
+            char second = (char)rnd.Next('A', 'Z' + 1);
+            quadrant = first.ToString() + second.ToString();
+            planetNumber = rnd.Next(1000, 10000);
+            return string.Concat(galaxyConversion + "-" + quadrant + "-" + planetNumber);
+        }
     }
 }
