@@ -43,5 +43,22 @@ namespace PlanetRush.Models
             NumberOfLightYearsToReach = random.Next(5, 21);
             ConfigureCorrectOption();
         }
+        private void ConfigureCorrectOption()
+        {
+            Random rng = new Random();
+            int randomCorrect = rng.Next(3);
+            if (randomCorrect == 0)
+            {
+                NeedsTerraforming = true;
+            }
+            else if (randomCorrect == 1)
+            {
+                NeedsGenestealing = true;
+            }
+            else if (randomCorrect == 2)
+            {
+                NeedsNuking = true;
+            }
+        }
     }
 }
