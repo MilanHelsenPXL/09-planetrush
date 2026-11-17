@@ -10,5 +10,24 @@ namespace PlanetRush.Models
     {
         private const string TrilliumAlloys = "Trillium Alloys";
         private const string RawAetherium = "Raw Aetherium";
-    }
+        private string _desiredMetal;
+
+        public string DesiredMetal
+        {
+            get { return _desiredMetal; }
+            set
+            {
+                if (value.Equals(TrilliumAlloys) || value.Equals(RawAetherium))
+                {
+                    _desiredMetal = value;
+                }
+                else
+                {
+                    _desiredMetal = "NONE";
+                }
+                
+            }
+        }
+
+            }
 }
