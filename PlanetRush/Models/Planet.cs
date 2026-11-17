@@ -8,8 +8,6 @@ namespace PlanetRush.Models
 {
     internal class Planet
     {
-        //Maak de volgende publieke properties: Radius, Seed, Name, TonsOfRawAetherium, TonsOfTrilliumAlloys,
-        //NeedsTerraforming, NeedsGenestealing, NeedsNuking, NumberOfLightYearsToReach.
         public int Radius { get; set; }
         public int Seed { get; set; }
         public string Name { get; set; }
@@ -19,5 +17,12 @@ namespace PlanetRush.Models
         public bool NeedsGenestealing { get; set; }
         public bool NeedsNuking { get; set; }
         public int NumberOfLightYearsToReach { get; set; }
+        public int ResourceDensity
+        {
+            get
+            {
+                return (TonsOfRawAetherium + TonsOfTrilliumAlloys) / 10;
+            }
+        }
     }
 }
