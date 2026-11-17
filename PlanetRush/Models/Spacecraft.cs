@@ -13,8 +13,6 @@ namespace PlanetRush.Models
         public int CargoCapacity { get; set; }
         public int EngineEfficiency { get; set; }
         public bool HasWarpDriveCharge { get; set; }
-        //Voorzie een private veld _currentFuel en een property CurrentFuel
-        //waarbij de setter de waarde beperkt tot FuelCapacity via Math.Min(value, FuelCapacity).
         private int _currentFuel;
 
         public int CurrentFuel
@@ -24,6 +22,14 @@ namespace PlanetRush.Models
             {
                 _currentFuel = Math.Min(value, FuelCapacity);
             }
+        }
+        public Spacecraft()
+        {
+            FuelCapacity = 1000;
+            CurrentFuel = FuelCapacity;
+            CargoCapacity = 1000;
+            EngineEfficiency = 10;
+            HasWarpDriveCharge = false;
         }
     }
 }
