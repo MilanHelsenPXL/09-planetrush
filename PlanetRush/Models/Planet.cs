@@ -22,10 +22,41 @@ namespace PlanetRush.Models
         {
             get { return (TonsOfRawAetherium + TonsOfTrilliumAlloys) / 10; }
         }
-        //Implementeer een parameterloze constructor die de constructor met galaxyCode = 0 aanroept. (zie PLANET-04)
         public Planet() : this(0)
         {
-            
+
         }
+
+        public Planet(int galaxyCode)
+        {
+            Random random = new Random();
+            Radius = random.Next(4, 14);
+            Seed = random.Next(); // ???????????????
+            Name = GeneratePlanetCode(galaxyCode);
+            TonsOfRawAetherium = random.Next(10, 111);
+            TonsOfTrilliumAlloys = random.Next(-10, 31);
+            if (TonsOfTrilliumAlloys < 0)
+            {
+                TonsOfTrilliumAlloys = 0;
+            }
+
+            NumberOfLightYearsToReach = random.Next(5, 21);
+            ConfigureCorrectOption();
+        }
+        //Implementeer een constructor Planet(int galaxyCode) die:
+        // 
+        // Radius: een willekeurige waarde instelt tussen 4–13
+        // 
+        // Seed genereert via Random.Next() die gebruikt wordt om het terrein van de planeet te genereren.
+        // 
+        // Name genereert via GeneratePlanetCode(galaxyCode) (zie PLANET-06)
+        // 
+        // TonsOfRawAetherium: een willekeurige waarde tussen 10–110
+        // 
+        // TonsOfTrilliumAlloys: een willekeurige waarde tussen -10 en 30 waarin negatieve waardes worden omgezet naar nul
+        // 
+        // NumberOfLightYearsToReach: een willekeurige waarde tussen 5–20
+        // 
+        // ConfigureCorrectOption() aanroept (zie PLANET-05)
     }
 }
