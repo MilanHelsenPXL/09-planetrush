@@ -13,5 +13,17 @@ namespace PlanetRush.Models
         public int CargoCapacity { get; set; }
         public int EngineEfficiency { get; set; }
         public bool HasWarpDriveCharge { get; set; }
+        //Voorzie een private veld _currentFuel en een property CurrentFuel
+        //waarbij de setter de waarde beperkt tot FuelCapacity via Math.Min(value, FuelCapacity).
+        private int _currentFuel;
+
+        public int CurrentFuel
+        {
+            get { return _currentFuel; }
+            set
+            {
+                _currentFuel = Math.Min(value, FuelCapacity);
+            }
+        }
     }
 }
