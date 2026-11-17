@@ -75,13 +75,14 @@ namespace PlanetRush
                 bool isTradingActive = true;
                 if (isTradingActive)
                 {
+                    TraderStation traderStation = new TraderStation(planet);
                     //TODO: Maak hier een nieuwe object aan van de klasse TraderStation
 
                     Console.WriteLine("\nBefore you leave the current star,\nyou visit the local trader station.");
 
                     AsciiEffects.DrawStar(new Random());
                     Console.ReadLine();
-
+                    traderStation.Visit(player);
                     //TODO: Roep hier de Visit-methode op van het nieuwe object
                 }
 
