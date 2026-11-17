@@ -17,12 +17,15 @@ namespace PlanetRush.Models
         public bool NeedsGenestealing { get; set; }
         public bool NeedsNuking { get; set; }
         public int NumberOfLightYearsToReach { get; set; }
+
         public int ResourceDensity
         {
-            get
-            {
-                return (TonsOfRawAetherium + TonsOfTrilliumAlloys) / 10;
-            }
+            get { return (TonsOfRawAetherium + TonsOfTrilliumAlloys) / 10; }
+        }
+        //Implementeer een parameterloze constructor die de constructor met galaxyCode = 0 aanroept. (zie PLANET-04)
+        public Planet() : this(0)
+        {
+            
         }
     }
 }
