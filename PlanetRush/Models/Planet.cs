@@ -43,20 +43,5 @@ namespace PlanetRush.Models
             NumberOfLightYearsToReach = random.Next(5, 21);
             ConfigureCorrectOption();
         }
-        //Implementeer een constructor Planet(int galaxyCode) die:
-        // 
-        // Radius: een willekeurige waarde instelt tussen 4–13
-        // 
-        // Seed genereert via Random.Next() die gebruikt wordt om het terrein van de planeet te genereren.
-        // 
-        // Name genereert via GeneratePlanetCode(galaxyCode) (zie PLANET-06)
-        // 
-        // TonsOfRawAetherium: een willekeurige waarde tussen 10–110
-        // 
-        // TonsOfTrilliumAlloys: een willekeurige waarde tussen -10 en 30 waarin negatieve waardes worden omgezet naar nul
-        // 
-        // NumberOfLightYearsToReach: een willekeurige waarde tussen 5–20
-        // 
-        // ConfigureCorrectOption() aanroept (zie PLANET-05)
     }
 }
