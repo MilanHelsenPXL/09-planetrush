@@ -23,5 +23,10 @@ namespace PlanetRush.Models
         {
             Spacecraft = new Spacecraft();
         }
+        public void AddFuel(int fuel)
+        {
+            Spacecraft.CurrentFuel += fuel;
+        }
+        
     }
 }
